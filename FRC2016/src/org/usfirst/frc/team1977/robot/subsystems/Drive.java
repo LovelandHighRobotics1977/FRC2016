@@ -18,7 +18,7 @@ public class Drive extends Subsystem {
 	private Talon backLeft;
 	private Talon backRight;
 	
-	private UserDrive userDrive;
+	private userDrive userDrive;
 	
 	private boolean speedToggle = false;
 	private double voltageCoefficient = 1;
@@ -31,8 +31,9 @@ public class Drive extends Subsystem {
 		backRight = new Talon(RobotMap.DRIVE_BACK_RIGHT_TALON);
 	}
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        userDrive = new userDrive();
+        setDefaultCommand(userDrive);
+        
     }
 }
 
