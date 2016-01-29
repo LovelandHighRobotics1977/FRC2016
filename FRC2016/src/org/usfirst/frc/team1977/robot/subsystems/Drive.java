@@ -27,12 +27,12 @@ public class Drive extends Subsystem {
 	public Drive() {
 		frontLeft = new Talon(RobotMap.DRIVE_FRONT_LEFT_TALON);
 		frontRight = new Talon (RobotMap.DRIVE_FRONT_RIGHT_TALON);
-		backLeft = new Talon(RobotMap.DRIVE_LEFT_TALON);
+		backLeft = new Talon(RobotMap.DRIVE_BACK_LEFT_TALON);
 		backRight = new Talon(RobotMap.DRIVE_BACK_RIGHT_TALON);
 	}
     public void initDefaultCommand() {
-        userDrive = new userDrive();
-        setDefaultCommand(userDrive);
+        Userdrive = new Userdrive();
+        setDefaultCommand(Userdrive);
         
     }
     public static Drive getInstance() {
