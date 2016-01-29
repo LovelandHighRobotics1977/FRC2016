@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1977.robot.subsystems;
 import org.usfirst.frc.team1977.robot.RobotMap;
+import org.usfirst.frc.team1977.robot.commands.Userdrive;
 
 import edu.wpi.first.wpilibj.Talon;
 //2016
@@ -18,7 +19,7 @@ public class Drive extends Subsystem {
 	private Talon backLeft;
 	private Talon backRight;
 	
-	private userDrive userDrive;
+	private Userdrive userDrive;
 	
 	private boolean speedToggle = false;
 	private double voltageCoefficient = 1;
@@ -27,11 +28,11 @@ public class Drive extends Subsystem {
 	public Drive() {
 		frontLeft = new Talon(RobotMap.DRIVE_FRONT_LEFT_TALON);
 		frontRight = new Talon (RobotMap.DRIVE_FRONT_RIGHT_TALON);
-		backLeft = new Talon(RobotMap.DRIVE_LEFT_TALON);
+		backLeft = new Talon(RobotMap.DRIVE_BACK_LEFT_TALON);
 		backRight = new Talon(RobotMap.DRIVE_BACK_RIGHT_TALON);
 	}
     public void initDefaultCommand() {
-        userDrive = new userDrive();
+        userDrive = new Userdrive();
         setDefaultCommand(userDrive);
         
     }
