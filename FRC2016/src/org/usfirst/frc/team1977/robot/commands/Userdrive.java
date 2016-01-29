@@ -6,10 +6,11 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  * @author Loveland High Robotics 1977
  */
-public class Userdrive extends Command {
+public class Userdrive extends CommandBase {
 
     public Userdrive() {
-        // Use requires() here to declare subsystem dependencies
+        requires(drive);
+    	// Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
