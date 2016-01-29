@@ -23,7 +23,6 @@ public class Drive extends Subsystem {
 	
 	private boolean speedToggle = false;
 	private double voltageCoefficient = 1;
-	private double turnPowerCoefficient = 1;
 	
 	public Drive() {
 		frontLeft = new Talon(RobotMap.DRIVE_FRONT_LEFT_TALON);
@@ -35,6 +34,16 @@ public class Drive extends Subsystem {
         userDrive = new Userdrive();
         setDefaultCommand(userDrive);
         
+    }
+    public static Drive getInstance() {
+    	if (instance == null) {
+    		instance = new Drive();
+    	}
+    	return instance;
+    }
+    
+    public void drive(double lPower, double rPower) {
+    	
     }
 }
 
