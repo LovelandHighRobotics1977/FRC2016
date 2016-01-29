@@ -18,6 +18,7 @@ public abstract class CommandBase extends Command {
 	 * Inherited static access to the OI.
 	 */
 	protected static OI oi;
+	
 
 	/**
 	 * Initialize the CommandBase, in doing so accessing and initializing every
