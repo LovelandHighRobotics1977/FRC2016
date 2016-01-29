@@ -43,7 +43,10 @@ public class Drive extends Subsystem {
     }
     
     public void drive(double lPower, double rPower) {
-    	
+    	frontLeft.set((lPower)*voltageCoefficient);
+    	backLeft.set((lPower)*voltageCoefficient);
+    	frontRight.set((-rPower)*voltageCoefficient);
+    	backRight.set((-rPower)*voltageCoefficient);
     }
 }
 
