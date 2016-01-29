@@ -35,5 +35,15 @@ public class Drive extends Subsystem {
         setDefaultCommand(userDrive);
         
     }
+    public static Drive getInstance() {
+    	if (instance == null) {
+    		instance = new Drive();
+    	}
+    	return instance;
+    }
+    
+    public void drive(double hPower, double vPower, double turn) {
+    	
+    }
 }
 
