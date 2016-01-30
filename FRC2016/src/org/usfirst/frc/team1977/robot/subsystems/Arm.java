@@ -27,7 +27,12 @@ public class Arm extends Subsystem {
     	}
     	return instance;
     }
-
+    
+    public void setArm( double power){
+    	ArmA.set(power);
+    	ArmB.set(power);
+    }
+    
     public void initDefaultCommand() {
         
     }
