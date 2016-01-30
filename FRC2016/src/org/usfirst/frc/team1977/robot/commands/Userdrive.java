@@ -20,7 +20,7 @@ public class Userdrive extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	double lPower = oi.getDriveJoystick().getLeftY();
-    	double rPower = oi.getDriveJoystick().getRighty();
+    	double rPower = oi.getDriveJoystick().getRightY();
     	if (Math.abs(lPower) < 0.2) {
     		lPower = 0;
     	}
