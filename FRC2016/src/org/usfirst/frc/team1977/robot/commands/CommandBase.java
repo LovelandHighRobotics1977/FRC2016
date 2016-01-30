@@ -2,6 +2,7 @@ package org.usfirst.frc.team1977.robot.commands;
 
 import org.usfirst.frc.team1977.robot.input.OI;
 import org.usfirst.frc.team1977.robot.subsystems.Drive;
+import org.usfirst.frc.team1977.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -20,6 +21,7 @@ public abstract class CommandBase extends Command {
 	 */
 	protected static OI oi;
 	protected static Drive drive;
+	protected static Shooter shooter;
 
 	/**
 	 * Initialize the CommandBase, in doing so accessing and initializing every
@@ -29,5 +31,6 @@ public abstract class CommandBase extends Command {
 	public static void init() {
 		oi = OI.getInstance();
 		drive = Drive.getInstance();
+		shooter = Shooter.getInstance();
 	}
 }
