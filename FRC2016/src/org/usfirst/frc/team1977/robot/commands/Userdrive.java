@@ -26,6 +26,8 @@ public class Userdrive extends CommandBase {
     	}
     	if (Math.abs(rPower) < 0.2) {
     		rPower = 0;
+    	}
+    	drive.drive(lPower, rPower);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -35,10 +37,12 @@ public class Userdrive extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
+    	drive.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	drive.stop();
     }
 }
