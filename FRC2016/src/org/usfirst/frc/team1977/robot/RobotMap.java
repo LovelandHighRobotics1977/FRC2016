@@ -24,6 +24,9 @@ public class RobotMap {
 	public static final int LEFT_SHOOTER_WHEEL_VICTOR = 4;
 	public static final int RIGHT_SHOOTER_WHEEL_VICTOR = 5;
 	public static final int FLYWHEEL_SHOOTER_VICTOR = 6;
+	public static final int ARM_A_MOTOR_CONTROLLER = 7;
+	public static final int ARM_B_MOTOR_CONTROLLER = 8;
+	public static final int ARM_ROLLER_SPIKE = 0;
 
 	public class XBoxMappings {
 
