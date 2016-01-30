@@ -9,10 +9,10 @@ import edu.wpi.first.wpilibj.command.Command;
 public class Userdrive extends CommandBase {
 
     public Userdrive() {
-    	
-       requires(drive);
+        requires(drive);
+    	// Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
     }
-
     // Called just before this Command runs the first time
     protected void initialize() {
     }
