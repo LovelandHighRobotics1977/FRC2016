@@ -1,5 +1,5 @@
 package org.usfirst.frc.team1977.robot.input;
-
+//2016
 import edu.wpi.first.wpilibj.buttons.Button;
 
 import org.usfirst.frc.team1977.robot.commands.ExampleCommand;
@@ -38,7 +38,16 @@ public class OI {
 	// button.whenReleased(new ExampleCommand());
 	
 	private static OI instance;
-
+	private XBoxController driveJoystick;
+	private XBoxController shooterJoystick;
+	private OI() {
+		driveJoystick = new XBoxController(0);
+		shooterJoystick = new XBoxController(1);
+	}
+	
+	public void init() {
+		
+	}
 	/**
 	 * Access the singleton instance of OI, constructing it if necessary.
 	 * 
@@ -49,5 +58,8 @@ public class OI {
 			instance = new OI();
 		}
 		return instance;
+	}
+	public XBoxController getDriveJoystick() {
+		return driveJoystick;
 	}
 }
