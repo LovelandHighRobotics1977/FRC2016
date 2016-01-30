@@ -21,6 +21,9 @@ public class Drive extends Subsystem {
 	
 	private Userdrive Userdrive;
 	
+	private boolean speedToggle = false;
+	private double voltageCoefficient = 1;
+	
 	public Drive() {
 		frontLeft = new Talon(RobotMap.DRIVE_FRONT_LEFT_TALON);
 		frontRight = new Talon (RobotMap.DRIVE_FRONT_RIGHT_TALON);
