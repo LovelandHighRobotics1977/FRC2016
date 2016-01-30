@@ -25,4 +25,18 @@ public class Shooter extends Subsystem {
 		}
 		return instance;
 	}
+	public void spinUp() {
+		leftShooterWheel.set(1.0);
+		rightShooterWheel.set(-1.0);
+	}
+	public void startFlywheel() {
+		flywheelShooter.set(1.0);
+	}
+	public void stopShooterWheel() {
+		leftShooterWheel.set(0.0);
+		rightShooterWheel.set(0.0);
+	}
+	public void stopFlywheelShooter() {
+		flywheelShooter.set(0.0);
+	}
 }
