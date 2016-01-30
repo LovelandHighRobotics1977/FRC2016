@@ -62,4 +62,7 @@ public class OI {
 	public XBoxController getDriveJoystick() {
 		return driveJoystick;
 	}
+	public XBoxController getShooterJoystick() {
+		return shooterJoystick;
+	}
 }
