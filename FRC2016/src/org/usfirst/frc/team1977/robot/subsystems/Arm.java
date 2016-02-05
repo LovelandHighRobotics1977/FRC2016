@@ -36,5 +36,8 @@ public class Arm extends Subsystem {
     public void initDefaultCommand() {
         
     }
+    public void stop() {
+    	setArm(0);
+    }
 }
 
