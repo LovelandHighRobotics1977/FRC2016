@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ArmUp extends Command {
+public class ArmUp extends CommandBase {
 
     public ArmUp() {
         requires(arm);
@@ -17,7 +17,7 @@ public class ArmUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double power = oi.getDriveJoystick().getRightShoulder();
+    	double power = oi.getDriveJoystick().getRightTriggerAxis();
     }
 
     // Make this return true when this Command no longer needs to run execute()
