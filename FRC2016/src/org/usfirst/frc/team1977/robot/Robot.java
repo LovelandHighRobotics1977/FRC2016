@@ -8,7 +8,9 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team1977.robot.commands.ExampleCommand;
 import org.usfirst.frc.team1977.robot.input.OI;
+import org.usfirst.frc.team1977.robot.subsystems.Drive;
 import org.usfirst.frc.team1977.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team1977.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -46,7 +48,10 @@ public class Robot extends IterativeRobot {
 	 * the robot is disabled.
      */
     public void disabledInit(){
-
+    	(Drive.getInstance()).stop();
+    	(Shooter.getInstance()).stopShooterWheel();
+    	(Shooter.getInstance()).stopKickwheelShooter();
+    	
     }
 	
 	public void disabledPeriodic() {

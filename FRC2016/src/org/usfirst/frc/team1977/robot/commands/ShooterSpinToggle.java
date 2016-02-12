@@ -28,11 +28,13 @@ public class ShooterSpinToggle extends CommandBase {
     	else {
     		shooter.spinUp();
     	}
+    	//Inverts the state of the spinner
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return true;
+        //Ends immediately
     }
 
     // Called once after isFinished returns true
