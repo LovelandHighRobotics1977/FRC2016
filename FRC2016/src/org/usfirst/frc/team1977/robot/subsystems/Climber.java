@@ -30,18 +30,19 @@ public class Climber extends Subsystem {
 		return instance;
 	}
     
-    public void extendArms{
+    public void extendArms(){
     	leftPneumaticPiston.set(DoubleSolenoid.Value.kForward);
     	rightPneumaticPiston.set(DoubleSolenoid.Value.kForward);
     }
     
-    public void retractArms{
+    public void retractArms(){
     	rightPneumaticPiston.set(DoubleSolenoid.Value.kReverse);
     	leftPneumaticPiston.set(DoubleSolenoid.Value.kReverse);
     }
     
-    public void stopArm{
+    public void stopArm(){
     	rightPneumaticPiston.set(DoubleSolenoid.Value.kOff);
-    	rightPneumaticPiston.set(DoubleSolenoid.Value.kOff);
+    	leftPneumaticPiston.set(DoubleSolenoid.Value.kOff);
+    }
 }
 
