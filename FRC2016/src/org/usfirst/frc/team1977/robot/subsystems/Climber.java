@@ -1,6 +1,8 @@
 
 package org.usfirst.frc.team1977.robot.subsystems;
 
+import org.usfirst.frc.team1977.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -15,8 +17,8 @@ public class Climber extends Subsystem {
 	private DoubleSolenoid rightPneumaticPiston;
 	
 	public Climber() {
-		leftPneumaticPiston = new DoubleSolenoid(1, 2);
-		rightPneumaticPiston = new DoubleSolenoid(1, 2);
+		leftPneumaticPiston = new DoubleSolenoid(RobotMap.LEFT_CLIMBER_PISTON_FOREWARD,RobotMap.LEFT_CLIMBER_PISTON_REVERSE);
+		rightPneumaticPiston = new DoubleSolenoid(RobotMap.RIGHT_CLIMBER_PISTON_FOREWARD,RobotMap.RIGHT_CLIMBER_PISTON_REVERSE);
 
 	}
     public void initDefaultCommand() {

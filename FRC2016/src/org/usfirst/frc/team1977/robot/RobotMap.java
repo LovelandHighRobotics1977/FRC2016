@@ -1,5 +1,5 @@
 package org.usfirst.frc.team1977.robot;
-
+//2016
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -27,6 +27,10 @@ public class RobotMap {
 	public static final int ARM_A_MOTOR_CONTROLLER = 6;
 	public static final int ARM_B_MOTOR_CONTROLLER = 7;
 	public static final int ARM_ROLLER_SPIKE = 0;
+	public static final int LEFT_CLIMBER_PISTON_FOREWARD = 0;
+	public static final int LEFT_CLIMBER_PISTON_REVERSE = 1;
+	public static final int RIGHT_CLIMBER_PISTON_FOREWARD = 2;
+	public static final int RIGHT_CLIMBER_PISTON_REVERSE = 3;
 
 	public class XBoxMappings {
 
