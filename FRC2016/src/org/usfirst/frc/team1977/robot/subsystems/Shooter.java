@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1977.robot.subsystems;
 import org.usfirst.frc.team1977.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Victor;
 //2016
@@ -9,39 +10,49 @@ public class Shooter extends Subsystem {
 	
 	public static Shooter instance;
 	
-	private Victor leftShooterWheel;
-	private Victor rightShooterWheel;
-	private Victor kickwheelShooter;
+	private CANTalon leftShooterWheel;
+	private CANTalon rightShooterWheel;
+	private Relay kickWheelShooter;
 	
-	public Shooter() {
-		leftShooterWheel = new Victor(RobotMap.LEFT_SHOOTER_WHEEL_VICTOR);
-		rightShooterWheel = new Victor(RobotMap.RIGHT_SHOOTER_WHEEL_VICTOR);
-		kickwheelShooter = new Victor(RobotMap.KICKWHEEL_SHOOTER_VICTOR);
+	private Shooter() {
+		leftShooterWheel = new CANTalon(RobotMap.SHOOTER_LEFT_WHEEL_DEVICENUM);
+		rightShooterWheel = new CANTalon(RobotMap.SHOOTER_RIGHT_WHEEL_DEVICENUM);
+		kickWheelShooter = new Relay(RobotMap.SHOOTER_KICKWHEEL_SPIKE);
 	}
+	
 	public void initDefaultCommand() {
 		
 	}
+	
 	public static Shooter getInstance() {
 		if (instance == null) {
 			instance = new Shooter();
 		}
 		return instance;
 	}
+	
+	public void setShotWheel(double lPower, double rPower) {
+		leftShooterWheel.set(lPower);
+		rightShooterWheel.set(-rPower);
+	}
+	
 	public void spinUp() {
-		leftShooterWheel.set(1.0);
-		rightShooterWheel.set(-1.0);
+		setShotWheel(1.0, 1.0);
 	}
-	public void startKickwheel() {
-		kickwheelShooter.set(1.0);
+	
+	public void stop() {
+		setShotWheel(0, 0);
 	}
-	public void stopShooterWheel() {
-		leftShooterWheel.set(0.0);
-		rightShooterWheel.set(0.0);
+	
+	public void startKickWheel() {
+		kickWheelShooter.set(Relay.Value.kForward);
 	}
-	public void stopKickwheelShooter() {
-		kickwheelShooter.set(0.0);
+	
+	public void stopKickWheel() {
+		kickWheelShooter.set(Relay.Value.kOff);
 	}
+	
 	public boolean isShooterSpinning() {
-		return (leftShooterWheel.get() == 1);
+		return (Math.abs(leftShooterWheel.get()) >= 1 || Math.abs(rightShooterWheel.get()) >= 1);
 	}
 }

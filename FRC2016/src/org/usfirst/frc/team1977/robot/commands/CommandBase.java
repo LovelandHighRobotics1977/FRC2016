@@ -32,9 +32,10 @@ public abstract class CommandBase extends Command {
 	 * prevent unnecessary redundancy.
 	 */
 	public static void init() {
-		oi = OI.getInstance();
 		drive = Drive.getInstance();
 		arm = Arm.getInstance();
 		shooter = Shooter.getInstance();
+		oi = OI.getInstance();
+		oi.init();
 	}
 }

@@ -7,26 +7,28 @@ package org.usfirst.frc.team1977.robot;
  * floating around.
  */
 public class RobotMap {
-	// For example to map the left and right motors, you could define the
-	// following variables to use with your drivetrain subsystem.
-	// public static int leftMotor = 1;
-	// public static int rightMotor = 2;
 
-	// If you are using multiple modules, make sure to define both the port
-	// number and the module. For example you with a rangefinder:
-	// public static int rangefinderPort = 1;
-	// public static int rangefinderModule = 1;
-	
+	// PWMOut
+	// -Talon
 	public static final int DRIVE_FRONT_LEFT_TALON = 0;
 	public static final int DRIVE_FRONT_RIGHT_TALON = 1;
 	public static final int DRIVE_BACK_LEFT_TALON = 2;
 	public static final int DRIVE_BACK_RIGHT_TALON = 3;
-	public static final int LEFT_SHOOTER_WHEEL_VICTOR = 4;
-	public static final int RIGHT_SHOOTER_WHEEL_VICTOR = 5;
-	public static final int KICKWHEEL_SHOOTER_VICTOR = 8;
-	public static final int ARM_A_MOTOR_CONTROLLER = 6;
-	public static final int ARM_B_MOTOR_CONTROLLER = 7;
+	// RelayOut
+	// -Spike
 	public static final int ARM_ROLLER_SPIKE = 0;
+	public static final int SHOOTER_KICKWHEEL_SPIKE = 1;
+	// DigitalIO
+	// -Limit
+	public static final int ARM_BOTTOM_LIMIT = 0;
+	public static final int ARM_TOP_LIMIT = 1;
+	// AnalogIn
+	// CANTrain
+	// -TalonSRX
+	public static final int SHOOTER_LEFT_WHEEL_DEVICENUM = 1;
+	public static final int SHOOTER_RIGHT_WHEEL_DEVICENUM = 2;
+	public static final int ARM_LEFT_TALONSRX_DEVICENUM = 3;
+	public static final int ARM_RIGHT_TALONSRX_DEVICENUM = 4;
 
 	public class XBoxMappings {
 

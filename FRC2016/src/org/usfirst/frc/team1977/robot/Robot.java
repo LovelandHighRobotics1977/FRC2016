@@ -1,17 +1,15 @@
 
 package org.usfirst.frc.team1977.robot;
 
+import org.usfirst.frc.team1977.robot.commands.CommandBase;
+
+import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
-import org.usfirst.frc.team1977.robot.commands.ExampleCommand;
-import org.usfirst.frc.team1977.robot.input.OI;
-import org.usfirst.frc.team1977.robot.subsystems.ExampleSubsystem;
-
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,22 +20,25 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-	public static OI oi;
-
-    Command autonomousCommand;
-    SendableChooser chooser;
+    private Command autonomousCommand;
+    private SendableChooser chooser;
+    
+    private CameraServer cs;
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = OI.getInstance();
-        chooser = new SendableChooser();
+    	System.out.println("Initulating robit.");
+    	CommandBase.init();
+    	cs = CameraServer.getInstance();
+    	cs.startAutomaticCapture("cam0");
+		System.out.println("Robit initulated.");
+        /**chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
-        SmartDashboard.putData("Auto mode", chooser);
+        SmartDashboard.putData("Auto mode", chooser);*/
     }
 	
 	/**
@@ -46,7 +47,8 @@ public class Robot extends IterativeRobot {
 	 * the robot is disabled.
      */
     public void disabledInit(){
-
+    	System.out.println("Disabulating robit.");
+    	System.out.println("Robit disabulated.");
     }
 	
 	public void disabledPeriodic() {
@@ -63,6 +65,7 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
+    	System.out.println("Initulating autonomulous.");
         autonomousCommand = (Command) chooser.getSelected();
         
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
@@ -78,6 +81,7 @@ public class Robot extends IterativeRobot {
     	
     	// schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
+        System.out.println("Autonomulous initulated.");
     }
 
     /**
@@ -88,11 +92,13 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopInit() {
+    	System.out.println("Initulating tellyflop.");
 		// This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        System.out.println("Tellyflop initulated.");
     }
 
     /**
@@ -106,6 +112,8 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during test mode
      */
     public void testPeriodic() {
+    	System.out.println("Initulating test.");
         LiveWindow.run();
+        System.out.println("Test initulated.");
     }
 }
