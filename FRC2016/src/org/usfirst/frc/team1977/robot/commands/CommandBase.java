@@ -2,8 +2,8 @@ package org.usfirst.frc.team1977.robot.commands;
 
 import org.usfirst.frc.team1977.robot.input.OI;
 import org.usfirst.frc.team1977.robot.subsystems.Arm;
+import org.usfirst.frc.team1977.robot.subsystems.Climber;
 import org.usfirst.frc.team1977.robot.subsystems.Drive;
-
 import org.usfirst.frc.team1977.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -25,6 +25,7 @@ public abstract class CommandBase extends Command {
 	protected static Drive drive;
 	protected static Arm arm;
 	protected static Shooter shooter;
+	protected static Climber climber;
 
 	/**
 	 * Initialize the CommandBase, in doing so accessing and initializing every
@@ -35,6 +36,7 @@ public abstract class CommandBase extends Command {
 		drive = Drive.getInstance();
 		arm = Arm.getInstance();
 		shooter = Shooter.getInstance();
+		climber = Climber.getInstance();
 		oi = OI.getInstance();
 		oi.init();
 	}
